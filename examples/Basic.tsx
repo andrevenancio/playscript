@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "@storybook/client-api"
+import React from "react"
+import { useEffect, useState } from "@storybook/client-api"
 import { storiesOf } from "@storybook/react"
-// import { State, onSnapState } from "../src"
+import { State, onSnapState } from "../src"
 
 storiesOf("Vanilla", module).add("Example", () => {
   const [log, setLog] = useState("No state defined yet")
@@ -10,7 +11,7 @@ storiesOf("Vanilla", module).add("Example", () => {
   }
 
   const handleClick = () => {
-    // State.test = Math.random()
+    State.test = Math.random()
   }
 
   useEffect(() => {
@@ -19,10 +20,10 @@ storiesOf("Vanilla", module).add("Example", () => {
     updateUserDisplayMessage({})
 
     // 2) define initial state
-    // State.test = 0
+    State.test = 0
 
     // 3) add callback for when state changes, by specifying to which keys to listen to
-    // onSnapState(["test"], updateUserDisplayMessage)
+    onSnapState(["test"], updateUserDisplayMessage)
   }, [])
 
   return (

@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react"
-import { emitter } from "./emitter"
-import { State } from "./State"
+import emitter from "./emitter"
+import State from "./State"
 
-export function useSnapState(props = []) {
+function useSnapState(keys: string[]) {
   const current = Object.assign({}, State)
 
   const matching: Record<string, any> = {}
-  props.forEach((prop) => {
+  keys.forEach((prop) => {
     matching[prop] = current[prop]
   })
 
@@ -21,16 +21,16 @@ export function useSnapState(props = []) {
   }
 
   useEffect(() => {
-    if (props && Array.isArray(props)) {
-      for (let i = 0; i < props.length; i++) {
-        emitter.on(props[i], handleStateChange)
+    if (keys && Array.isArray(keys)) {
+      for (let i = 0; i < keys.length; i++) {
+        emitter.on(keys[i], handleStateChange)
       }
     }
 
     return () => {
-      if (props && Array.isArray(props)) {
-        for (let i = 0; i < props.length; i++) {
-          emitter.off(props[i], handleStateChange)
+      if (keys && Array.isArray(keys)) {
+        for (let i = 0; i < keys.length; i++) {
+          emitter.off(keys[i], handleStateChange)
         }
       }
     }
@@ -38,3 +38,5 @@ export function useSnapState(props = []) {
 
   return state
 }
+
+export default useSnapState

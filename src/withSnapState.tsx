@@ -1,7 +1,7 @@
 import React, { Component, ComponentType } from "react"
-import { onSnapState } from "./onSnapState"
+import onSnapState from "./onSnapState"
 
-export const withSnapState = (keys: string[]) => (
+const withSnapState = (keys: string[]) => (
   WrappedComponent: ComponentType<any>
 ) => {
   const displayName =
@@ -35,3 +35,5 @@ export const withSnapState = (keys: string[]) => (
     }
   }
 }
+
+export default withSnapState

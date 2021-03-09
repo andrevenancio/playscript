@@ -1,6 +1,6 @@
-import { emitter } from "./emitter"
+import emitter from "./emitter"
 
-export const onSnapState = (
+const onSnapState = (
   keys: string[],
   onStateChange: (props: Record<string, any>) => void
 ) => {
@@ -20,3 +20,4 @@ export const onSnapState = (
     }
   }
 }
+export default onSnapState

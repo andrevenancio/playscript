@@ -1,6 +1,6 @@
-import { emitter } from "./emitter"
+import emitter from "./emitter"
 
-export const State = new Proxy<{ [key: string]: any }>(
+const State = new Proxy<{ [key: string]: any }>(
   {},
   {
     get(target, key: string, receiver: any) {
@@ -23,3 +23,5 @@ export const State = new Proxy<{ [key: string]: any }>(
     },
   }
 )
+
+export default State
