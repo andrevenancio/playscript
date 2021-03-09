@@ -1,0 +1,48 @@
+{
+  "name": "@andrevenancio/snap-state",
+  "version": "1.0.0",
+  "description": "snap-state is a state management library you can use on React or vanilla javascript projects",
+  "main": "lib/index.js",
+  "author": "Andre Venancio",
+  "license": "MIT",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
+    "@storybook/addon-storysource": "^6.1.21",
+    "@storybook/addons": "^6.1.21",
+    "@storybook/react": "^6.1.21",
+    "@storybook/source-loader": "^6.1.21",
+    "@storybook/storybook-deployer": "^2.8.7",
+    "@types/events": "^3.0.0",
+    "@types/jsdom": "^16.2.6",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "@types/storybook__react": "^5.2.1",
+    "babel-loader": "^8.2.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "ts-loader": "^8.0.17",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "@babel/preset-typescript": "^7.13.0",
+    "events": "^3.3.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "scripts": {
+    "dev": "npm run storybook",
+    "start": "tsc --watch",
+    "build": "tsc",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  }
+}
